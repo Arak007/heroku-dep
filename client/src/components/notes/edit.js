@@ -71,10 +71,14 @@ function Edit(props) {
           <label>Content</label>
           <textarea className="form-control" name="content" onChange={handleInputChange} value={inputs.content}></textarea>
         </div>
+        <div className="form-group">
+          <label>Previous Date</label>
+          <label>{inputs.date}</label>
+        </div>
 
         <div className="form-group">
-          <label>Date</label>
-          <input type="date" className="form-control" name="date" onChange={handleInputChange} value={inputs.date}></input>
+          <label>New Date</label>
+          <input type="date" className="form-control" name="date" onChange={handleInputChange} value={inputs.date} required></input>
         </div>
         <div className="form-group">
           <label>Tags</label>
