@@ -4,7 +4,7 @@ import Axios from "axios";
 
 function Destroy(props) {
   useEffect(() => {
-    Axios.post('/api/notes/destroy', { id: props.match.params.id });
+    Axios.post('/api/notes/destroy', { _id: props.match.params.id });
   }, [props]);
 
   return <Redirect to="/notes" />;

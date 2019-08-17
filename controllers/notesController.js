@@ -11,7 +11,6 @@ router.post(`/notes/`, NotesController.create);
 
 exports.index = (req,res) => {
     
-    
     Note.find()
     .then(notes => res.json(notes))
     .catch(err => res.status(404).send(err));
@@ -77,7 +76,7 @@ exports.destroy = (req,res) => {
     if (!req.isAuthenticated())
         return res.status(404).send({ error: "Not authenticated" });
     Note.deleteOne({
-        _id: req.body.id,
+        id: req.body.id,
         author: req.session.userId
     })
     .then(() => res.status(200).send({success: "Note deleted"}))

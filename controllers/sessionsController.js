@@ -8,18 +8,17 @@ const jwt = require("jsonwebtoken");
         email: req.body.email
       })
       .then(author => {
-        author.authenticate(req.body.password, (err, isMatch) => {
+        author.authenticate(req.body.password,(err, isMatch) => 
+        {
           if (err) throw new Error(err);
   
           if (isMatch) {
-
             console.log(" Hey there");
             req.session.userId = author.id;
 
-            const token = jwt.sign({
-              payload: req.body.email},
+            const token = jwt.sign({payload: req.body.email},
               "bobthebuilder",
-              {expiresIn: "1h"}
+              {expiresIn:"1h"}
               );
 
               res.cookie('token', token, { httpOnly: true }).status(201).send({success: "Authenticated successfully"});
