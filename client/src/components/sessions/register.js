@@ -8,15 +8,9 @@ function Register() {
     event.preventDefault();
 
     Axios.post(
-      '/api/authors',
+      '/api/authors/',
       {
-        author: {
-          firstName: inputs.firstName,
-          lastName: inputs.lastName,
-          email: inputs.email,
-          password: inputs.password,
-          passwordConfirmation: inputs.passwordConfirmation
-        }
+        author: inputs
       }
     )
       .then(resp => {
