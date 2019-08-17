@@ -20,12 +20,12 @@ function Edit(props) {
     Axios.post(
       '/api/notes/update',
       {
-            id: props.match.params.id,
-            title: inputs.title,
-            content: inputs.content,
-            date: inputs.date,
-            tags: inputs.tags
-          
+        id: props.match.params.id,        
+        title: inputs.title,
+        content: inputs.content,
+        date: inputs.date,
+        tags: inputs.tags
+      
       }
     )
       .then(resp => {
@@ -46,7 +46,7 @@ function Edit(props) {
       // Below is a shallow merge. It takes the original inputs value and merges in the new object key and value using the spread operator
       return {
         ...inputs, [name]: value
-      }
+      };
     });
   }
 
@@ -61,7 +61,7 @@ function Edit(props) {
       <h1>Edit Note</h1>
     </header>
     <div>
-      <form onSubmit={handleSubmit}>
+      <form action="/notes/update" method="POST" onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Title</label>
           <input className="form-control" name="title" required="required" onChange={handleInputChange} defaultValue={inputs.title}/>
@@ -77,7 +77,7 @@ function Edit(props) {
           <input type="date" className="form-control" name="date" onChange={handleInputChange} value={inputs.date}></input>
         </div>
         <div className="form-group">
-          <label>tags</label>
+          <label>Tags</label>
           <textarea className="form-control" name="tags" onChange={handleInputChange} value={inputs.tags}></textarea>
         </div>
 

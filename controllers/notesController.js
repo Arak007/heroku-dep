@@ -65,7 +65,6 @@ exports.update = (req,res) => {
         id: req.body.id,
         author: req.session.userId,
         title: req.body.title,
-        //author: req.body.author,
         date: req.body.date,
         content: req.body.content,
         tags: req.body.tags,
