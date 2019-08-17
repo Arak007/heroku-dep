@@ -1,0 +1,38 @@
+block content
+   .container
+      header
+         form(action=(note?'/notes/update':'/notes'), method = "POST")
+            if note
+               input(type="hidden", name="id". value=note.id)
+
+            .form-group
+               label Title
+               input.form-control(name="title", required, value=(note?note.title : null)) 
+
+            .form-group
+               label Author
+               input.form-control(name="author", value=(note ? note.author : null))
+
+            .form-group
+               label Text
+               textarea.form-control(name="content")= note ? note.content : null 
+
+            .form-group
+            if(note)
+                label Previously Set Date
+            if(note)
+                p= note.date
+               
+            
+
+            .form-group
+               label Date
+               input.form-control(type='date', name="date", value=(note ? note.date : null)) 
+
+            .form-group
+               label Tags
+               input.form-control(name="tags", placeholder="eg:JS,school,etc", value=(note ? note.tags : null)) 
+
+            
+            .form-group
+               button.btn.btn-dark(type="submit") Save

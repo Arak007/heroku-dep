@@ -1,0 +1,20 @@
+extends ../layouts/layout.pug
+block content
+  .container
+    header
+      div
+        //include ./form.pug
+        
+        h1= note.title
+        ul
+          li
+            label Title
+              p= note.author
+          li
+            label Date
+              p= note.date
+          li
+            label content
+              p= note.content
+
+      

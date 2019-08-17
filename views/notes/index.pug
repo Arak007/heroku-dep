@@ -1,0 +1,28 @@
+extends ../layouts/layout.pug
+
+block append content
+
+  h1 Welcome to my Notes
+  h2 List of Notes 
+  p
+    button
+      a(href=`/notes/new`)= "New note"
+
+
+    div
+      table.table.table-striped
+        thead
+          tr
+            th Title
+            th Edit
+        tbody
+          tr
+            each note in notes
+              td
+                a(href=`/notes/${note.id}`)= note.title 
+              td
+                a(href=`/notes/${note.id}/edit`) Edit
+                = `|`
+                form.destroy(action=`/notes/destroy`, method="POST")
+                  input(type="hidden", name="id", value=`${note.id}`)
+                  input.destroy(type="submit", value="Destroy")

@@ -1,0 +1,14 @@
+extends ../layouts/layout.pug
+
+block content
+  .container
+    header
+      h1= `Edit ${note.title}`
+    
+block content
+  .container
+    header
+      h1 Edit Note
+
+    div
+      include ./form.pug
