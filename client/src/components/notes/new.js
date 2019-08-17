@@ -77,6 +77,7 @@ function New() {
         </div>
       </form>
     </div>
+    
   </div>
   );
 }
