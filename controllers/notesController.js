@@ -25,7 +25,7 @@ exports.show = (req,res) => {
         _id: req.params.id,
         
     })
-    .then(note =>res.json(blog))
+    .then(note =>res.json(note))
     .catch(err => res.status(404).json(err));
 };
 
