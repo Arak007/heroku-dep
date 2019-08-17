@@ -34,12 +34,11 @@ exports.create = (req,res) => {
     if (!req.isAuthenticated())
         return res.status(404).send({ error: "Not authenticated" });
     console.log(`${JSON.stringify(req.body.author)}`)
-    req.body.author = req.session.userId
+    //req.body.author = req.session.userId
     
     Note.create({
-
         title: req.body.title,
-        author: req.body.author,
+        author: req.session.userId,
         date: req.body.date,
         content: req.body.content,
         tags: req.body.tags,

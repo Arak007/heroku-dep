@@ -8,7 +8,7 @@ const noteSchema = new Schema({
   content: String,
   author: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Author',
+    ref:'Author',
     required :true
   },
   tags:String

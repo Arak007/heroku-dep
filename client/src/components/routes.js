@@ -8,9 +8,10 @@ import Login from "./sessions/login";
 import Logout from "./sessions/logout";
 import Register from "./sessions/register";
 import NoteIndex from "./notes/index";
-import NoteNew from "./notes/new";
+
 import NoteShow from "./notes/show";
 import NoteEdit from "./notes/edit";
+import NoteNew from "./notes/new";
 
 function Routes() {
   return (
@@ -21,10 +22,11 @@ function Routes() {
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/logout" component={Logout} />
-      <Route exact path="/notes" component={NoteIndex} />
+      <Route exact path="/notes/" component={NoteIndex} />
+      <Route exact path="/notes/new/" component={NoteNew} />
       <Route exact path="/notes/:id" component={NoteShow} />
       <Route exact path="/notes/:id/edit" component={NoteEdit} />
-      <Route exact path="/notes/new" component={NoteNew} />
+      
     </Switch>
   );
 }

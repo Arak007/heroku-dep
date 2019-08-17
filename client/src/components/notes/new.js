@@ -12,11 +12,10 @@ function New() {
     Axios.post(
       '/api/notes',
       {
-        
-          title: inputs.title,
-          content: inputs.content,
-          date: inputs.date,
-          tags: inputs.tags
+          title:inputs.title,
+          content:inputs.content,
+          date:inputs.date,
+          tags:inputs.tags
         
       }
     )
@@ -48,9 +47,9 @@ function New() {
 
   return (
     <div className="container">
-    <header>
-      <h1>New Note</h1>
-    </header>
+      <header>
+        <h1>New Note</h1>
+      </header>
     <div>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -60,16 +59,16 @@ function New() {
 
         <div className="form-group">
           <label>Content</label>
-          <textarea className="form-control" name="content" onChange={handleInputChange}></textarea>
+          <textarea className="form-control" name="content" onChange={handleInputChange} />
         </div>
 
         <div className="form-group">
           <label>Date</label>
-          <input type="date" className="form-control" name="date" onChange={handleInputChange}></input>
+          <input type="date" className="form-control" name="date" onChange={handleInputChange} />
         </div>
         <div className="form-group">
           <label>tags</label>
-          <textarea className="form-control" name="tags" onChange={handleInputChange}></textarea>
+          <textarea className="form-control" name="tags" onChange={handleInputChange}/>
         </div>
 
         <div className="form-group">
